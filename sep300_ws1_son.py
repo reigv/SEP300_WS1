@@ -37,6 +37,46 @@ phone_book = {
 
 name = str(input('enter the name of the you want to look for: '))
 
-for t,v in phone_book.keys(),phone_book.values():
-    if t == phone_book.keys():
-        print(t, v)
+found = False
+
+
+for t,v in phone_book.items():
+    if t == name:
+        found = True
+        # print("found")
+        print(v)
+
+if found == False: print("not found")
+
+
+# TASK 4
+
+fruits = {'apple' , 'banana'}
+print("options: \n" \
+"1. add fruit \n" \
+"2. remove fruit\n" \
+"3. check added fruit\n" \
+"4. exit")
+
+choice = int(input(" your option is: "))
+if choice == 1: 
+    add_fruit = str(input("Pls name the fruit to add: "))
+    fruits.add(add_fruit)
+
+if choice == 2:
+    remove_fruit = str(input("Pls name the fruit to remove: "))
+    if remove_fruit in fruits:
+        fruits.remove(remove_fruit)
+    else:
+        print("fruit not found")
+
+if choice == 3:
+    check_fruit = str(input("Pls name the fruit to check: "))
+    if check_fruit in fruits:
+        print("fruit found")
+    else:
+        print("fruit not found")
+
+if choice == 4:
+    print("exiting program")
+    
